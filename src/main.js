@@ -9,6 +9,8 @@ export default class App {
          return false;
      }
     }
+
+    
 }
 
 let app = new App();
