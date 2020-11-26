@@ -58,6 +58,22 @@ export default class App {
 
         return calificacionLetras
     }
+
+    obtenerCercano100(numero1, numero2, numero3){
+        let resta1= Math.abs(100-numero1);
+        let resta2= Math.abs(100-numero2);
+        let resta3= Math.abs(100-numero3);
+        let masCercano;
+
+        if (resta1 < resta2 && resta1 < resta3){
+            masCercano = numero1;
+        } else if (resta2 < resta1 && resta2 < resta3){
+            masCercano = numero2;
+        } else {
+            masCercano = numero3;
+        }
+        return masCercano;
+    }
 }
 
 let app = new App();
@@ -83,3 +99,7 @@ console.log(app.obtenerCalificacion(8));
 console.log(app.obtenerCalificacion(9));
 console.log(app.obtenerCalificacion(10));
 console.log(app.obtenerCalificacion(11));
+
+console.log(app.obtenerCercano100(122, 134, 158));
+console.log(app.obtenerCercano100(22, 13, 1));
+console.log(app.obtenerCercano100(122, 34, 15));
