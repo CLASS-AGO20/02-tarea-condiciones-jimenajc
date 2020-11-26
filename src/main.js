@@ -101,6 +101,35 @@ export default class App {
 
         return resultado;
     }
+
+    costoRenta(peliculas, dia){
+        let resultado;
+
+        switch (dia){
+            case 1:
+                resultado = ( Math.trunc(peliculas / 3) * 60 ) + ((peliculas % 3) * 25);
+                break;
+            case 2: 
+                resultado = (Math.trunc(peliculas / 2) * 25) + ((peliculas % 2) * 25);
+                break;
+            case 3:
+                resultado = ((peliculas * 25) * 0.85 );
+                break;
+            case 4:
+                resultado = (Math.trunc(peliculas / 2) * 25) + ((peliculas % 2) * 25);
+                break;
+            case 5:
+                resultado = ( Math.trunc(peliculas / 3) * 60 ) + ((peliculas % 3) * 25);
+                break;
+            case 6:
+                resultado = peliculas * 25;
+                break;
+            case 7:
+                resultado = peliculas * 25;
+                break;
+        }
+        return resultado;
+    }
 }
 
 let app = new App();
@@ -137,3 +166,15 @@ console.log(app.calcular(100, 3, "*" ));
 console.log(app.calcular(100, 3, "/" ));
 console.log(app.calcular(100, 3, "%" ));
 console.log(app.calcular(100, 3, "a" ));
+
+console.log(app.costoRenta(8,1));
+console.log(app.costoRenta(9,1));
+console.log(app.costoRenta(8,2));
+console.log(app.costoRenta(9,2));
+console.log(app.costoRenta(8,3));
+console.log(app.costoRenta(9,4));
+console.log(app.costoRenta(8,4));
+console.log(app.costoRenta(9,5));
+console.log(app.costoRenta(8,5));
+console.log(app.costoRenta(8,6));
+console.log(app.costoRenta(8,7));
