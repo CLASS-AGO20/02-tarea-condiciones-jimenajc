@@ -127,6 +127,8 @@ export default class App {
             case 7:
                 resultado = peliculas * 25;
                 break;
+            default :
+                resultado = -1;
         }
         return resultado;
     }
@@ -178,3 +180,4 @@ console.log(app.costoRenta(9,5));
 console.log(app.costoRenta(8,5));
 console.log(app.costoRenta(8,6));
 console.log(app.costoRenta(8,7));
+console.log(app.costoRenta(9,10));
