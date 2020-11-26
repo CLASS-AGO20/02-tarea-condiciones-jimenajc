@@ -74,6 +74,33 @@ export default class App {
         }
         return masCercano;
     }
+
+    calcular(numero1, numero2, operador){
+        let resultado;
+
+        switch(operador){
+            case "+" :
+                resultado = numero1 + numero2;
+                break;
+            case "-":
+                resultado = numero1 - numero2;
+                break;
+            case "*" :
+                resultado = numero1 * numero2;
+                break;
+            case "/" :
+                resultado = numero1 / numero2;
+                break;
+            case "%" :
+                resultado = numero1 % numero2;
+                break;
+            default:
+                resultado = -1;
+
+        }
+
+        return resultado;
+    }
 }
 
 let app = new App();
@@ -103,3 +130,10 @@ console.log(app.obtenerCalificacion(11));
 console.log(app.obtenerCercano100(122, 134, 158));
 console.log(app.obtenerCercano100(22, 13, 1));
 console.log(app.obtenerCercano100(122, 34, 15));
+
+console.log(app.calcular(100, 3, "+" ));
+console.log(app.calcular(100, 3, "-" ));
+console.log(app.calcular(100, 3, "*" ));
+console.log(app.calcular(100, 3, "/" ));
+console.log(app.calcular(100, 3, "%" ));
+console.log(app.calcular(100, 3, "a" ));
