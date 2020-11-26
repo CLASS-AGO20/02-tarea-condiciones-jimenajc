@@ -132,6 +132,28 @@ export default class App {
         }
         return resultado;
     }
+
+    costoBoletos(boletos, zona){
+        let resultado;
+
+        switch(zona){
+            case 1:
+                resultado = boletos * 300;
+                break;
+            case 2:
+                resultado = boletos * 450;
+                break;
+            case 3:
+                resultado = boletos * 700;
+                break;
+            default:
+                resultado = -1;
+        }
+        if (resultado >= 2000){
+            resultado = resultado * .93;
+        }
+        return resultado;
+    }
 }
 
 let app = new App();
@@ -181,3 +203,11 @@ console.log(app.costoRenta(8,5));
 console.log(app.costoRenta(8,6));
 console.log(app.costoRenta(8,7));
 console.log(app.costoRenta(9,10));
+
+console.log(app.costoBoletos(3, 1));
+console.log(app.costoBoletos(10, 1));
+console.log(app.costoBoletos(3, 2));
+console.log(app.costoBoletos(10, 2));
+console.log(app.costoBoletos(2, 3));
+console.log(app.costoBoletos(10, 3));
+console.log(app.costoBoletos(3, 4));
