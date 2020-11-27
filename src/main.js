@@ -154,6 +154,15 @@ export default class App {
         }
         return resultado;
     }
+
+    estaEnRango(limiteInicial, limiteFinal, numero){
+
+        if (numero > limiteInicial && numero < limiteFinal){
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
 
 let app = new App();
@@ -211,3 +220,8 @@ console.log(app.costoBoletos(10, 2));
 console.log(app.costoBoletos(2, 3));
 console.log(app.costoBoletos(10, 3));
 console.log(app.costoBoletos(3, 4));
+
+console.log(app.estaEnRango(10, 15, 12));
+console.log(app.estaEnRango(10, 15, 10));
+console.log(app.estaEnRango(10, 15, 15));
+console.log(app.estaEnRango(-100, 150, -12));
